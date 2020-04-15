@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Assignment</string>
+    <string name="first_name">First Name</string>
+    <string name="update">Update</string>
+
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
