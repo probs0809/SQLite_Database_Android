@@ -70,17 +70,19 @@ public class Form extends AppCompatActivity{
                 editTextList.get(5).setText(registrations.getEmail());
                 selectCourse.setSelection(courses.indexOf(registrations.getCourse()));
                 course = registrations.getCourse();
-                if(registrations.getGender().equals("Male")) {
-                    selectGender.check(R.id.m);
-                    gender = "male";
-                }
-                else if (registrations.getGender().equals("Female")) {
-                    selectGender.check(R.id.f);
-                    gender = "female";
-                }
-                else {
-                    selectGender.check(R.id.o);
-                    gender = "others";
+                switch (registrations.getGender()){
+                    case "male":
+                        selectGender.check(R.id.m);
+                        gender = "male";
+                        break;
+                    case "female":
+                        selectGender.check(R.id.f);
+                        gender = "female";
+                        break;
+                    default:
+                        selectGender.check(R.id.o);
+                        gender = "others";
+                        break;
                 }
             } catch (Exception e) {
                 update = !update;
@@ -105,6 +107,7 @@ public class Form extends AppCompatActivity{
             }
 
             startActivity(new Intent(Form.this,MainActivity.class));
+            finish();
         }else {
             Snackbar.make(findViewById(R.id.form),"Some fields are empty",Snackbar.LENGTH_LONG).show();
         }
